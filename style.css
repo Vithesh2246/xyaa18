@@ -2122,56 +2122,97 @@ button {
         height: 150px;
     }
 }
-
 /* =====================================================
-   PAGE 1 CARD DELAYED APPEARANCE
+   PAGE 4 — LAST THING BUTTON
 ===================================================== */
 
-.intro-card {
-    opacity: 0;
+#messageNext {
+    position: absolute;
 
-    transform:
-        translateY(25px)
-        scale(0.92);
+    left: 50%;
+    bottom: 24px;
+
+    transform: translateX(-50%);
+
+    z-index: 100;
+
+    display: block;
+
+    min-width: 150px;
+
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7137d4,
+            #5420a9
+        );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 28px
+        rgba(80,40,160,.3);
 
     transition:
-        opacity 0.8s ease,
-        transform 0.8s cubic-bezier(.17,.89,.32,1.2);
+        background .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
 }
 
-.intro-card.show {
-    opacity: 1;
+#messageNext:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #6230be,
+            #45158e
+        );
 
     transform:
-        translateY(0)
-        scale(1);
+        translateX(-50%)
+        translateY(-3px)
+        scale(1.04);
+
+    box-shadow:
+        0 16px 32px
+        rgba(80,40,160,.38);
 }
 
-/* GitHub/mobile safety fix for Continue button */
 
-#birthdayNext {
-    position: fixed !important;
+/* MOBILE */
 
-    left: 50% !important;
-    bottom: 20px !important;
+@media (max-width: 700px) {
 
-    transform: translateX(-50%) !important;
+    #messageNext {
+        left: 50%;
 
-    z-index: 99999 !important;
+        bottom: 12px;
 
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
+        min-width: 135px;
 
-#birthdayNext.show {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-}
+        padding: 12px 22px;
 
-#birthdayNext.show:hover {
-    transform: translateX(-50%) scale(1.04) !important;
+        font-size: 13px;
+
+        transform:
+            translateX(-50%);
+    }
+
+    #messageNext:hover {
+        transform:
+            translateX(-50%)
+            translateY(-3px)
+            scale(1.04);
+    }
 }
 
 /* =====================================================
